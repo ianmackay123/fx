@@ -18,12 +18,11 @@ Start Lumen:
 project stages:
   Up next:
 
-  1)
   3) since the check orders Cron runs every minute, we need to optimize this for bulk order processing
       ideally we get the max and min price for each instrument, and check whether trigger has fallen within this
       (this will work when we have updates to instruments every second, but may miss spikey orders...)
   4) add apis to get stuff:
-      User's balance, used margin
+      User's balance, used margin - Done
       Current open trades
       Current open orders
       Historic trades
@@ -36,3 +35,16 @@ project stages:
       reset account
   8) Margin calls - BANKRUPT! if balance goes less than 0 when considering all remaining open trades
       Maybe limit max lot size and margin to keep this not too easy to do
+
+      Data gathering
+        Pull latest values for all pairs every minute
+        Pull inter day data for last day every 24 hours
+
+
+      Trading
+        Viewing
+          Get all instruments
+          Get all pairs for instrument
+          Get current value for pair - Done
+          Get inter-day values for pair over time period
+          Market open - regular check every minute

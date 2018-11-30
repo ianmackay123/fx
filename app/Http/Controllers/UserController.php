@@ -42,9 +42,13 @@ class UserController extends Controller
 
   public function getEquity($id){
     //Equity=balance +Credit +(floating Profit -floating losses)
+    return User::where('id', $id)
+      ->select('id','balance', 'used_margin')
+      ->get();
 
   }
- 
+
+
 
   public function getFloatingProfit($id){
     //This works out whether the user is positive or negative on open positions

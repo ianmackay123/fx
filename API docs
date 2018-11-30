@@ -50,29 +50,10 @@ https://www.diffen.com/difference/Limit_Order_vs_Stop_Order
 Stop - put in an order that stops further losses
 Limit - put in an order that maximises profit
 
-Areas of the API:
+GIT:
 
-Data gathering
-  Pull latest values for all pairs every minute
-  Pull inter day data for last day every 24 hours
+git add .
+git commit -m"comment here"
+git push -u origin master
 
-
-Trading
-  Viewing
-    Get all instruments
-    Get all pairs for instrument
-    Get current value for pair - Done
-    Get inter-day values for pair over time period
-    Market open - regular check every minute
-
-
-  Making a trade
-    Check: market open - DONE
-    Check: sufficient funds - DONE
-    Return: Current long /short amt in trade
-    Trigger limit orders
-
-    Open an order:
-    (buy/sell)
-      market (= current price at time of trade, for demo), also trade - DONE
-      stop limit (stop and limit will be the same for demo) - Done
+git diff --name-only

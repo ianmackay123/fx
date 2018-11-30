@@ -22,6 +22,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
   //users section
   $router->get('user/{id}', ['uses' => 'UserController@showOneUser']);
   $router->get('user/getFloatingProfit/{id}', ['uses' => 'UserController@getFloatingProfit']);
+  $router->get('user/getEquity/{id}', ['uses' => 'UserController@getEquity']);
+
   //$router->post('fx', ['uses' => 'FxController@create']);
   //$router->delete('fx/{id}', ['uses' => 'FxController@delete']);
   //$router->put('fx/{id}', ['uses' => 'FxController@update']);
