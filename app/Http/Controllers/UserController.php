@@ -44,7 +44,7 @@ class UserController extends Controller
     //Equity=balance +Credit +(floating Profit -floating losses)
 
   }
-
+ 
 
   public function getFloatingProfit($id){
     //This works out whether the user is positive or negative on open positions
