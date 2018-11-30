@@ -1,0 +1,78 @@
+Knowledge links:
+https://auth0.com/blog/developing-restful-apis-with-lumen/
+
+Currency pecking order:
+EUR > GBP > AUD > NZD > USD > CHF > JPY = (28 pairs)
+
+Free forex APIS:
+
+Site: alphavantage: (no bid ask?)
+key: H23N2DYRZQXPRQCU
+example: https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=JPY&apikey=demo
+Usage: 5 a minute/ 500 a day (~every 3 mins)
+
+1forge:
+100 updates a second, 1000 a day (every 1.5 min)
+key: PaZzmI5M56zE3F3RSOnzE5BtHFjBB5qG
+remaining calls check:
+https://forex.1forge.com/1.0.3/quota?api_key=PaZzmI5M56zE3F3RSOnzE5BtHFjBB5qG
+
+
+truefx
+User: SparrowC
+Pass: Dannyboy1
+https://www.truefx.com/dev/data/TrueFX_MarketDataWebAPI_DeveloperGuide.pdf
+example:
+http://webrates.truefx.com/rates/connect.html?u=SparrowC&p=Dannyboy1&f=html&q=blah&id=SparrowC:Dannyboy1:ozrates:1542041576291
+
+Metatrader4 account:
+https://trade.mql5.com/trade?servers=Ava-Real%201,Ava-Real%202,Ava-Real%203,Ava-Demo,Ava-Demo%202,Ava-Real%204
+leverage: 5
+40356121
+r4fevwm
+mjw7rxu
+
+
+--------------------------
+
+BUY=ASK
+ASK>Bid
+
+When I Buy currency, I use the lower price
+Lot size: Use  lots ($100,000) = this is amount traded after leverage applied
+Buy EUR/GBP means I am holding GBP. The local price stored is the price I paid for them.
+
+Calcs tester: https://alpari.com/en/trading/calculator/
+
+
+Stop v limit:
+https://www.diffen.com/difference/Limit_Order_vs_Stop_Order
+Stop - put in an order that stops further losses
+Limit - put in an order that maximises profit
+
+Areas of the API:
+
+Data gathering
+  Pull latest values for all pairs every minute
+  Pull inter day data for last day every 24 hours
+
+
+Trading
+  Viewing
+    Get all instruments
+    Get all pairs for instrument
+    Get current value for pair - Done
+    Get inter-day values for pair over time period
+    Market open - regular check every minute
+
+
+  Making a trade
+    Check: market open - DONE
+    Check: sufficient funds - DONE
+    Return: Current long /short amt in trade
+    Trigger limit orders
+
+    Open an order:
+    (buy/sell)
+      market (= current price at time of trade, for demo), also trade - DONE
+      stop limit (stop and limit will be the same for demo) - Done

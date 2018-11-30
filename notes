@@ -1,0 +1,38 @@
+Useful commands etc
+
+  Database:
+    New table: php artisan make:migration create_NAME_HERE_table
+    update in /database/migrations
+    run: php artisan migrate
+
+    reset and seed: php artisan migrate:refresh --seed
+
+    run cron:    php artisan schedule:run
+
+Start Lumen:
+  php -S localhost:8000 -t public
+
+
+
+
+project stages:
+  Up next:
+
+  3) since the check orders Cron runs every minute, we need to optimize this for bulk order processing
+      ideally we get the max and min price for each instrument, and check whether trigger has fallen within this
+      (this will work when we have updates to instruments every second, but may miss spikey orders...)
+  4) add apis to get stuff:
+      User's balance, used margin
+      Current open trades
+      Current open orders
+      Historic trades
+  6) add authentication to API calls
+  7) additional functionality
+      User management (CRUD)
+      Leagues
+      Groups
+      Emails
+      reset account
+  8) Margin calls - BANKRUPT! if balance goes less than 0 when considering all remaining open trades
+      Maybe limit max lot size and margin to keep this not too easy to do
+      
